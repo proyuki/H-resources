@@ -7,7 +7,7 @@
   <div class="sign-up-box">
     <h2 class="sign-up-context">シフト提出・打刻・給料明細を<br>アプリで簡単管理</h2>
 
-    <form class="sign-up-form" method="POST" action="{{ route('user.login') }}">
+    <form class="sign-up-form" method="POST" action="{{ route('admin.login') }}">
       @csrf
 
       <h3 class="sign-up-sub-context">管理者様 ログイン</h3>
