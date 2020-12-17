@@ -15,9 +15,9 @@ class Authenticate extends Middleware
         // ルーティングに応じて未ログイン時のリダイレクト先を振り分ける
         if (!$request->expectsJson()) {
             if (Route::is('user.*')) {
-                return route($this->$user_route);
+                return route('user.login');
             } elseif (Route::is('admin.*')) {
-                return route($this->$admin_route);
+                return route('admin.login');
             }
         }
     }
