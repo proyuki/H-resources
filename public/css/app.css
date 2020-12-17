@@ -190,7 +190,7 @@ img {
 }
 
 /*================================================================================
-# section(sign-up)
+# section(sign-up(& login))
 ===============================================================================*/
 .sign-up-box {
   background-color: #fff;
@@ -271,13 +271,13 @@ img {
   justify-content: flex-end;
 }
 
-.user-login {
+.login-button {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
 }
 
-.user-login-under {
+.under-login-button {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0;

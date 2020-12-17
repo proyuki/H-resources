@@ -10,7 +10,7 @@
     <form class="sign-up-form" method="POST" action="{{ route('user.login') }}">
       @csrf
 
-      <h3 class="sign-up-sub-context">ログイン</h3>
+      <h3 class="sign-up-sub-context">スタッフ様 ログイン</h3>
       <dl class="sign-up-list">
 
         <dt class="sign-up-item-title">メールアドレス</dt>
@@ -37,12 +37,12 @@
         </dd>
       </dl>
 
-      <div class="user-login">
-        <button class="button-link" type="submit">確定</button>
+      <div class="login-button">
+        <button class="button-link" type="submit">ログイン</button>
       </div>
     </form>
 
-    <div class="user-login-under">
+    <div class="under-login-button">
       <button class="button-link" type="submit">管理者の方はこちら</button>
     </div>
     
