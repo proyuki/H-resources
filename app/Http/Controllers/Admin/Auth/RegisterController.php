@@ -50,6 +50,12 @@ class RegisterController extends Controller
         return Auth::guard('admin');
     }
 
+    // 新規登録画面
+    public function showRegistrationForm()
+    {
+        return view('admin.auth.register');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
