@@ -27,7 +27,7 @@
     <div class="container main-header">
       <div class="header-left">
         <div class="logo-container">
-          <img src="../../images/logo.png" alt="ロゴ画像">
+          <img src="{{ asset('image/logo.png') }}" alt="ロゴ画像">
         </div>
         <h2 class="company-name">株式会社H-resources 様</h2>
       </div>
@@ -44,7 +44,11 @@
     </div>
   </header>
 
+  <div class="main container">
+
   @yield('content')
+
+  </div>
 
 </body>
 

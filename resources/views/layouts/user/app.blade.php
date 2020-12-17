@@ -27,7 +27,7 @@
     <div class="main-header user-container">
       <div class="header-left">
         <div class="logo-container">
-          <img src="../../images/logo.png" alt="ロゴ画像">
+          <img src="{{ asset('image/logo.png') }}" alt="ロゴ画像">
         </div>
         <h2 class="company-name">株式会社H-resources 山田太郎 様</h2>
       </div>
