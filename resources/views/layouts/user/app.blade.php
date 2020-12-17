@@ -44,7 +44,11 @@
     </div>
   </header>
 
+  <div class="user-main user-container">
+
   @yield('content')
+
+  </div>
 
 </body>
 
