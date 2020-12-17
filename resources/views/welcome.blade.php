@@ -3,7 +3,6 @@
 @section('title', 'H-resources')
 
 @section('content')
-
 <div class="user-container">
 
   <section class="top top-box">
@@ -81,5 +80,4 @@
 <footer class="footer">
   <p class="footer-text">© Copyright2020 H-resources All Rights Reserved.</p>
 </footer>
-
 @endsection

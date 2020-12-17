@@ -227,7 +227,7 @@ img {
 
 
 /*================================================================================
-# section(sign-up)
+# section(sign-up(& login))
 ===============================================================================*/
 .sign-up-box {
   background-color: #fff;
@@ -293,12 +293,23 @@ img {
 }
 
 /*================================================================================
-# section(staff-register)
+# section(user-login)
 ===============================================================================*/
-.staff-register,
-.admin-login {
+.staff-register {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.user-login {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.user-login-under {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
 }
 
 
