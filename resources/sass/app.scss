@@ -1,1 +1,751 @@
-//
+@charset "UTF-8";
+
+/*================================================================================
+# mixin
+===============================================================================*/
+$breakpoints: (
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (max-width: 1080px)',
+  'lg': 'screen and (max-width: 1400px)',
+  'xl': 'screen and (min-width: 1401px)'
+
+) !default;
+
+@mixin mq($breakpoint: xl) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+
+
+/*================================================================================
+# color
+===============================================================================*/
+$primary-color: #415AC3;
+$font-color: #2F2F2F;
+$thin-font-color: rgba(47, 47, 47, 0.8);
+$border-color: #707070;
+$thin-bg-color: rgba(255, 255, 255, 0.7);
+
+
+
+/*================================================================================
+# common - 全体に共通するスタイル
+===============================================================================*/
+@include mq(xl) {
+  .no-xl {
+    display: none;
+  }
+}
+
+@include mq(lg) {
+  .no-lg {
+    display: none;
+  }
+}
+
+@include mq(md) {
+  .no-md {
+    display: none;
+  }
+}
+
+@include mq(sm) {
+  .no-sm {
+    display: none;
+  }
+}
+
+body {
+  font-size: 16px;
+  color: $font-color;
+  font-family: "Hiragino Kaku Gothic ProN", serif;
+  line-height: 1.6875;
+  background: linear-gradient(rgba(0, 255, 245, 0.25), rgba(3, 33, 255, 0.25)) fixed;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: content-box;
+}
+
+.user-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: content-box;
+}
+
+.button-link {
+  background-image: linear-gradient(45deg, #709dff 50%, #b0c9ff 100%);
+  display: inline-block;
+  padding: 0.2em 1em;
+  font-weight: bold;
+  color: #FFF;
+  border-radius: 3px;
+  opacity: 0.7;
+  -webkit-transition: .3s;
+  transition: opacity .3s;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+
+
+/*================================================================================
+# header(logo-header)
+===============================================================================*/
+.logo-header {
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo-container {
+    width: 10em;
+  }
+}
+
+
+
+
+
+/*================================================================================
+# top
+===============================================================================*/
+.top {
+  margin-bottom: 20px;
+  
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+
+.top-box {
+  background-color: $thin-bg-color;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-left-box {
+  width: 40%;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .top-left-title {
+    font-size: 20px;
+  }
+}
+
+.top-right-box {
+  width: 40%;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .top-right-up-box {
+    margin-bottom: 40px;
+  }
+
+  .top-right-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.content {
+  background-color: $thin-bg-color;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border-radius: 10px;
+
+  .content-box {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  
+    .content-image-box {
+      width: 50%;
+    }
+
+    .content-text-box {
+      width: 40%;
+      font-size: 18px;
+    }
+  }
+}
+
+.bottom-box {
+  background-color: $thin-bg-color;
+  padding: 40px 0;
+  text-align: center;
+  border-radius: 10px;
+
+  .bottom-box-text {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+}
+
+.footer {
+  background-color: #8ab1ff;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+
+
+
+
+
+/*================================================================================
+# section(sign-up(& login))
+===============================================================================*/
+.sign-up-box {
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 40px;
+  border: solid 1px $border-color;
+  border-radius: 4px;
+
+  @include mq(sm) {
+    margin: 20px auto;
+    padding: 30px 20px;
+  }
+
+  .sign-up-context {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+
+    @include mq(sm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .sign-up-sub-context {
+   text-align: center;
+   font-weight: bold;
+   margin-bottom: 20px;
+
+   @include mq(sm) {
+     margin-bottom: 10px;
+   }
+  }
+
+  .sign-up-item-title {
+    font-weight: bold;
+  }
+
+  .sign-up-item-input {
+    margin-bottom: 10px;
+
+    input {
+      width: 100%;
+      padding: 0.5em 0.5em;
+      border-radius: 2px;
+      border: solid 1px $border-color;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include mq(sm) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .sign-up-send {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/*================================================================================
+# section(user-login)
+===============================================================================*/
+.staff-register {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.under-login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+
+
+/*================================================================================
+# header(header)
+===============================================================================*/
+.header {
+  background-color: #fff;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo-container {
+    width: 10em;
+  }
+
+  .company-name {
+    font-size: 20px;
+    color: $font-color;
+  }
+}
+
+.header-right-lists {
+  display: flex;
+
+  .header-right-list {
+    margin-left: 30px;
+    font-weight: bold;
+  }
+}
+
+
+
+/*================================================================================
+# main & common (admin)
+===============================================================================*/
+.main {
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-box {
+  background-color: #fff;
+  border: $border-color 1px solid;
+  margin-right: 20px;
+  padding: 20px 30px;
+  flex-grow: 3;
+}
+
+.main-box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  .main-box-top-left {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .main-box-top-right {
+    display: flex;
+
+    .main-box-top-box {
+      width: 10em;
+      padding: 5px 10px;
+      margin-left: 5px;
+      border: $border-color 1px solid;
+      text-align: center;
+    }
+  }
+}
+
+.stamping-box {
+  width: 100px;
+  text-align: center;
+  border-radius: 999px;
+  margin-right: 15px;
+}
+
+.attendance {
+  background-color: #FF5C5C;
+  color: #fff;
+}
+
+.no-attendance {
+  background-color: #FF9A9A;
+  color: #fff;
+}
+
+.miss-attendance {
+  background-color: #FFD5D5;
+  color: #FF0000;
+}
+
+.leave {
+  background-color: #625CFF;
+  color: #fff;
+}
+
+.no-leave {
+  background-color: #9AAAFF;
+  color: #fff;
+}
+
+.miss-leave {
+  background-color: #D8D5FF;
+  color: #0027FF;
+}
+
+.shift-submission {
+  background-color: #34E35D;
+  color: #fff;
+}
+
+
+
+/*================================================================================
+# main & common (user)
+===============================================================================*/
+.user-main {
+  margin: 30px auto;
+}
+
+.user-main-box {
+  background-color: #fff;
+  border: $border-color 1px solid;
+  padding: 20px 30px;
+}
+
+
+
+/*================================================================================
+# notification
+===============================================================================*/
+.notification-list {
+  display: flex;
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .datetime {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+}
+
+
+
+/*================================================================================
+# shift calendar
+===============================================================================*/
+.calendar,
+.calendar-row,
+.week,
+.day,
+.shift-list {
+  border: solid 0.5px $border-color;
+}
+
+.calendar {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.week,
+.day {
+  width: 14.2857%;
+
+  &:first-child {
+    color: #FF0000;
+  }
+
+  &:last-child {
+    color: #000AFF;
+  }
+}
+
+.week,
+.day,
+.shift-list {
+  &:first-child {
+    background-color: #FFE8E8;
+  }
+
+  &:last-child {
+    background-color: #E8EBFF;
+  }
+}
+
+.shift-list {
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+
+/*================================================================================
+# shift sm-shift
+===============================================================================*/
+.sm-calendar,
+.sm-calendar-row,
+.sm-year-month,
+.sm-week,
+.sm-day,
+.sm-shift-list {
+  border: solid 0.5px $border-color;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.sm-calendar {
+  border-collapse: collapse;
+  width: 100%;
+
+  .sm-sunday {
+    color: #FF0000;
+    background-color: #FFE8E8;
+  }
+
+  .sm-saturday {
+    color: #000AFF;
+    background-color: #E8EBFF;
+  }
+}
+
+
+
+
+/*================================================================================
+# stamping (admin)
+===============================================================================*/
+.main-stamping {
+  display: flex;
+  justify-content: center;
+}
+
+.stamping-lists {
+  width: 40%;
+
+  .stamping-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .stamping-list {
+    padding: 10px 0;
+    border-top: solid 1px $border-color;
+  }
+
+  &:first-child {
+    margin-right: 20px;
+  }
+
+  &:last-child {
+    margin-left: 20px;
+  }
+}
+
+
+
+/*================================================================================
+# stamping (user)
+===============================================================================*/
+.stamping-list-row {
+  display: flex;
+  margin-bottom: 10px;
+
+  .stamping-list-context {
+    margin-left: 8px;
+  }
+}
+
+
+
+/*================================================================================
+# salary
+===============================================================================*/
+.whole {
+  width: 40%;
+  margin: 50px auto 50px;
+
+  .whole-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+.whole-details-list {
+  font-size: 18px;
+  display: flex;
+
+  .first {
+    font-size: 20px;
+  }
+
+  .whole-details-name,
+  .whole-details-salary {
+    text-align: right;
+  }
+
+  .whole-details-salary {
+    margin: 0 0 0 auto;
+  }
+}
+
+.single-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.single {
+  width: 40%;
+  border-bottom: solid 1px $border-color;
+  padding: 15px 0;
+
+  &:first-child {
+    margin-right: 20px;
+  }
+
+  &:last-child {
+    margin-left: 20px;
+    border: none;
+  }
+
+  &:nth-last-child(2) {
+    border: none;
+  }
+
+  .single-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .single-details-list {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+
+/*================================================================================
+# account
+===============================================================================*/
+.main-box-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.account-edit-row {
+  width: 60%;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  font-weight: bold;
+
+  input {
+    width: 100%;
+    padding: 0.5em 0.5em;
+    border-radius: 2px;
+    border: solid 1px $border-color;
+
+    @include mq(sm) {
+      width: 100%;
+    }
+  }
+
+  span {
+    color: red;
+    font-size: 10px;
+    padding-left: 20px;
+  }
+}
+
+.account-edit-send {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.account-out {
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-left: 10px;
+  }
+}
+
+
+/*================================================================================
+# staff(admin only)
+===============================================================================*/
+.staff {
+  background-color: #fff;
+  border: $border-color 1px solid;
+  padding: 20px 30px;
+  flex-grow: 1;
+}
+
+.staff-top {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.staff-area {
+  padding-right: 20px;
+}
+
+
+
+
+
